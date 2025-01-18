@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Purchase tickets for upcoming events by Charters on Vine. Experience unique trolley tours in Iowa.">
+  <meta name="keywords" content="Charters on Vine, event tickets, trolley events, buy tickets, Iowa tours">
+  <meta name="author" content="Charters on Vine">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets | Charters on Vine</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts: Diplomata SC & Merriweather -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-Specific CSS Overrides -->
+  <style>
+    .navbar {
+      background-color: var(--primary-color) !important;
+      position: static !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    .navbar a {
+      color: black !important;
+    }
+    .navbar a:hover {
+      color: var(--secondary-color) !important;
+    }
+    body {
+      background-color: var(--primary-color) !important;
+      margin: 0;
+    }
+    .parallax-1,
+    .content-section,
+    .parallax,
+    header,
+    main {
+      background-color: var(--primary-color) !important;
+    }
+    h1 {
+      color: black!important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    h2 {
+      color: black !important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    p {
+      color: black !important;
+      font-family: 'Merriweather', serif !important;
+      font-size: 1.5rem;
+      text-shadow: var(--primary-color) !important;
+    }
+    .footer {
+      color: var(--primary-color) !important;
+      text-shadow: var(--background-color) !important;
+    }
+    .footer p {
+      color: var(--primary-color) !important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--background-color) !important;
+    }
+    .footer-social svg {
+      width: 32px;
+      height: 32px;
+    }
+    .btn-primary {
+      background-color: var(--background-color) !important;
+    }
+    .event-card {
+      margin-bottom: 2rem;
+      border: 2px solid var(--background-color);
+    }
+    .event-card .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .event-date {
+      font-size: 1.25rem;
+      font-family: 'Merriweather', serif;
+      margin-bottom: 0.5rem;
+    }
+    .seats-remaining {
+      font-weight: bold;
+      color: var(--background-color) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand">
+        <img
+          src="Images/logo.png"
+          alt="Charters on Vine Logo"
+          class="navbar-logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="tickets.html">Tickets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="charters.html">Charters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tickets / Events Section -->
+  <section class="content-section py-5">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <div class="row" id="events-container"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>📞 <a href="tel:5153576768">515-357-6768</a></p>
+      <div class="footer-social">
+        <!-- Social Icons Omitted For Brevity -->
+      </div>
+      <a href="policies.html" class="footer-policies">Policies</a>
+      <p>&copy; 2025 Charters on Vine LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script>
+    async function fetchSheetData() {
+      try {
+        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfjXywU6WDFTwGr2Xt5JPhKVX-AsCBLqESaQCFuokBrrjUkoF4hCV3jiHlDl50OEV270NpjsdbHl-p/pub?output=csv";
+        const response = await fetch(sheetUrl);
+        const csvText = await response.text();
+        const events = parseCsvToObjects(csvText);
+
+        const container = document.getElementById("events-container");
+        if (!container) return;
+
+        container.innerHTML = "";
+        events.forEach((event) => {
+          // Retrieve data from the CSV columns:
+         // Inside fetchSheetData function
+const eventName = event.eventName || "Event Name";
+const seatsRem = event.seatsRemaining || "0";
+const date = event.date || "TBA";
+const description = event.description || "";
+const price = event.price || "0";
+const thumbnail = event.thumbnail || "Images/default.jpg";
+
+// Build query parameters for the Checkout page
+const params = new URLSearchParams({
+  event: eventName,
+  date: date,
+  description: description,
+  price: price,
+  thumbnail: thumbnail
+});
+
+
+          // Build the card HTML
+          const cardHtml = `
+            <div class="col-md-4">
+              <div class="card event-card mb-3">
+                <img
+                  src="${thumbnail}"
+                  class="card-img-top"
+                  alt="${eventName} Thumbnail"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">${eventName}</h5>
+                  <p class="event-date">Date: ${date}</p>
+                  <p class="card-text">${description}</p>
+                  <p class="mb-2">
+                    Seats Remaining:
+                    <span class="seats-remaining">${seatsRem}</span>
+                  </p>
+                  <a
+                    href="checkout.html?${params.toString()}"
+                    class="btn btn-primary w-100"
+                  >
+                    Buy Tickets
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+          container.insertAdjacentHTML("beforeend", cardHtml);
+        });
+      } catch (err) {
+        console.error("Error fetching/parsing sheet data:", err);
+      }
+    }
+
+    function parseCsvToObjects(csvText) {
+      const lines = csvText
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((l) => l);
+
+      if (lines.length < 2) return [];
+
+      const headers = lines[0].split(",").map((h) => h.trim());
+      const data = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const rowCells = lines[i].split(",").map((cell) => cell.trim());
+        const rowObj = {};
+        headers.forEach((header, idx) => {
+          rowObj[header] = rowCells[idx] || "";
+        });
+        data.push(rowObj);
+      }
+      return data;
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchSheetData);
+  </script>
+</body>
+</html>

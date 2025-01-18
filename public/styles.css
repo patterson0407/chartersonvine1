@@ -1,0 +1,243 @@
+/* Global Styles */
+:root {
+    --primary-color: #fbf8e2;
+    --background-color: #8b0000;
+    --secondary-color: #160a86;
+    --tertiary-color: #5e4d01;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(251, 248, 226, 0.0);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    font-size: 25px;
+    padding: 0 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+    color: var(--primary-color);
+    font-family: 'Diplomata SC', serif;
+    text-decoration: none;
+    text-shadow: black;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+}
+
+.navbar .navbar-logo {
+    height: 250px;
+    width: auto;
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-logo {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .navbar-logo {
+        height: 150px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('Images/hero-image.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    margin: 0;
+    font-family: 'Diplomata SC', serif;
+}
+
+h1 {font-size: 2rem;
+    color: Var(--primary-color);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    margin: 0;
+    font-family: 'Diplomata SC', serif;}
+
+.hero p {
+    font-size: 2rem;
+    color: #fbf8e2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    margin: 0;
+    font-family: "Merriweather", serif;
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        top: 85%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Parallax Sections */
+.parallax-2, .parallax-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.parallax-box {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--background-color);
+    position: relative;
+    margin: 0;
+}
+
+.parallax-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.parallax-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Parallax Box Text Overlay */
+.parallax-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-size: 5rem;
+    font-family: 'Diplomata SC', serif;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.parallax-box:hover .parallax-text {
+    color: var(--secondary-color);
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive Styles for Parallax Sections */
+@media (max-width: 992px) {
+    .parallax-2, .parallax-3 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .parallax-box {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .parallax-text {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .parallax-box {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .parallax-text {
+        font-size: 2rem;
+        padding: 0 1rem; /* Prevent text from getting cut off */
+    }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-family: 'Diplomata SC', serif;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 1rem;
+    }
+
+    .footer-social img {
+        width: 24px;
+        height: 24px;
+    }
+}

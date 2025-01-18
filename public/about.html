@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Charters on Vine offers unique, stylish trolley tours and charters in the Des Moines area and beyond. Family-owned and proudly serving Ames, Ankeny, West Des Moines, Waukee, Altoona, and more.">
+  <meta name="keywords" content="Des Moines Trolley, Trolley Tours Iowa, Private Charters, Event Cruises, Family-Owned Business, Charters on Vine">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Charters on Vine</title>
+
+  <!-- Existing links to CSS, fonts, etc. -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Diplomata+SC&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-Specific CSS Overrides (only for this page) -->
+  <style>
+    .navbar {
+      background-color: var(--primary-color) !important;
+      position: static !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    .navbar a {
+      color: black !important;
+    }
+    .navbar a:hover {
+      color: var(--secondary-color) !important;
+    }
+    body {
+      background-color: var(--primary-color) !important;
+      margin: 0;
+    }
+    .parallax-1,
+    .content-section,
+    .parallax,
+    header,
+    main {
+      background-color: var(--primary-color) !important;
+    }
+    h1 {
+      color: black!important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    h2 {
+      color: black !important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--primary-color) !important;
+    }
+    p {
+      color: black !important;
+      font-family: 'Merriweather', serif !important;
+      font-size: 1.5rem;
+      text-shadow: var(--primary-color) !important;
+    }
+    .footer {
+      color: var(--primary-color) !important;
+      text-shadow: var(--background-color) !important;
+    }
+    .footer p {
+      color: var(--primary-color) !important;
+      font-family: 'Diplomata SC', serif !important;
+      text-shadow: var(--background-color) !important;
+    }
+    .footer-social svg {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Charters on Vine Logo" class="navbar-logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          <li class="nav-item"><a class="nav-link" href="charters.html">Charters</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Parallax Header -->
+  <header class="parallax parallax-1">
+    <div class="container text-center text-white py-5">
+      <h1 class="diplomata-sc-regular">About Charters on Vine</h1>
+      <p>Discover how our family-owned trolley tours make every journey extraordinary.</p>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <section class="content-section py-5">
+    <div class="container">
+      <!-- 1) Image Left, Text Right -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img
+            src="Images/1547.webp"
+            alt="Charters on Vine Trolley in Des Moines, Iowa"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Our Story</h2>
+          <p>
+            Charters on Vine was founded with a passion for offering 
+            unique, stylish, and memorable trolley rides throughout Iowa. 
+            Based in the Des Moines area, we bring our signature charm to 
+            communities including Ames, Ankeny, West Des Moines, Waukee, Altoona, 
+            Bondurant, Huxley, Cambridge, Slater, Elkhart, Clive, Johnston, and Urbandale. 
+            Whether you’re exploring the city or celebrating a milestone, our goal 
+            is to make every journey unforgettable.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2) Image Right, Text Left (use flex-md-row-reverse) -->
+      <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="col-md-6">
+          <img
+            src="Images/8.webp"
+            alt="The Family Behind Charters on Vine"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Meet Our Family</h2>
+          <p>
+            We are a proud military family, deeply connected to Iowa 
+            and committed to delivering top-notch hospitality on every trolley tour. 
+            Taylor is the first woman enlisted infantry soldier in the Iowa National Guard 
+            (read more about her <a href="https://apnews.com/article/iowa-ames-iowa-state-university-2a77fdd2916732eb2ba809a906643c85">historical achievement</a>), 
+            and Jordan not only keeps our trolleys in pristine condition 
+            but also serves as a Blackhawk Helicopter Mechanic. 
+            Our dedication to service, both on and off the trolley, is what 
+            makes Charters on Vine a truly one-of-a-kind experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3) Image Left, Text Right -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img
+            src="Images/854.webp"
+            alt="Private Trolley Charters for Weddings and Corporate Events in Iowa"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Private Charters</h2>
+          <p>
+            From weddings to corporate events, our private trolley charters 
+            are customized to suit your needs—whether you’re looking to host 
+            an unforgettable team-building outing or celebrate a special day. 
+            Request more information by filling out the form 
+            <a href="charters.html">here</a> or call us at <a href="tel:5153576768">515-357-6768</a>. 
+            Let us bring the charm of Charters on Vine to your next event!
+          </p>
+        </div>
+      </div>
+
+      <!-- 4) Image Right, Text Left -->
+      <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="col-md-6">
+          <img
+            src="Images/717.webp"
+            alt="Public Trolley Cruise Tours in the Des Moines Area"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Event Cruises</h2>
+          <p>
+            For a fun day out, join our public special event cruises. 
+            Enjoy scenic routes, engaging commentary, and plenty of 
+            photo opportunities as we journey through the best that Des Moines 
+            has to offer. Ready to reserve your spot? 
+            <a href="tickets.html">Buy your tickets here</a> and prepare 
+            for an incredible trolley ride with Charters on Vine!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>📞 <a href="tel:5153576768">515-357-6768</a></p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61555992268865" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/chartersonvine/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@chartersonvine?is_from_webapp=1&sender_device=pc" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+          </svg>
+        </a>
+        <a href="https://www.yelp.com/biz/charters-on-vine-cambridge" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-yelp" viewBox="0 0 16 16">
+            <path d="m4.188 10.095.736-.17.073-.02A.813.813 0 0 0 5.45 8.65a1 1 0 0 0-.3-.258 3 3 0 0 0-.428-.198l-.808-.295a76 76 0 0 0-1.364-.493C2.253 7.3 2 7.208 1.783 7.14c-.041-.013-.087-.025-.124-.038a2.1 2.1 0 0 0-.606-.116.72.72 0 0 0-.572.245 2 2 0 0 0-.105.132 1.6 1.6 0 0 0-.155.309c-.15.443-.225.908-.22 1.376.002.423.013.966.246 1.334a.8.8 0 0 0 .22.24c.166.114.333.129.507.141.26.019.513-.045.764-.103l2.447-.566zm8.219-3.911a4.2 4.2 0 0 0-.8-1.14 1.6 1.6 0 0 0-.275-.21 2 2 0 0 0-.15-.073.72.72 0 0 0-.621.031c-.142.07-.294.182-.496.37-.028.028-.063.06-.094.089-.167.156-.353.35-.574.575q-.51.516-1.01 1.042l-.598.62a3 3 0 0 0-.298.365 1 1 0 0 0-.157.364.8.8 0 0 0 .007.301q0 .007.003.013a.81.81 0 0 0 .945.616l.074-.014 3.185-.736c.251-.058.506-.112.732-.242.151-.088.295-.175.394-.35a.8.8 0 0 0 .093-.313c.05-.434-.178-.927-.36-1.308M6.706 7.523c.23-.29.23-.722.25-1.075.07-1.181.143-2.362.201-3.543.022-.448.07-.89.044-1.34-.022-.372-.025-.799-.26-1.104C6.528-.077 5.644-.033 5.04.05q-.278.038-.553.104a8 8 0 0 0-.543.149c-.58.19-1.393.537-1.53 1.204-.078.377.106.763.249 1.107.173.417.41.792.625 1.185.57 1.036 1.15 2.066 1.728 3.097.172.308.36.697.695.857q.033.015.068.025c.15.057.313.068.469.032l.028-.007a.8.8 0 0 0 .377-.226zm-.276 3.161a.74.74 0 0 0-.923-.234 1 1 0 0 0-.145.09 2 2 0 0 0-.346.354c-.026.033-.05.077-.08.104l-.512.705q-.435.591-.861 1.193c-.185.26-.346.479-.472.673l-.072.11c-.152.235-.238.406-.282.559a.7.7 0 0 0-.03.314c.013.11.05.217.108.312q.046.07.1.138a1.6 1.6 0 0 0 .257.237 4.5 4.5 0 0 0 2.196.76 1.6 1.6 0 0 0 .349-.027 2 2 0 0 0 .163-.048.8.8 0 0 0 .278-.178.7.7 0 0 0 .17-.266c.059-.147.098-.335.123-.613l.012-.13c.02-.231.03-.502.045-.821q.037-.735.06-1.469l.033-.87a2.1 2.1 0 0 0-.055-.623 1 1 0 0 0-.117-.27Zm5.783 1.362a2.2 2.2 0 0 0-.498-.378l-.112-.067c-.199-.12-.438-.246-.719-.398q-.644-.353-1.295-.695l-.767-.407c-.04-.012-.08-.04-.118-.059a2 2 0 0 0-.466-.166 1 1 0 0 0-.17-.018.74.74 0 0 0-.725.616 1 1 0 0 0 .01.293c.038.204.13.406.224.583l.41.768q.341.65.696 1.294c.152.28.28.52.398.719q.036.057.068.112c.145.239.261.39.379.497a.73.73 0 0 0 .596.201 2 2 0 0 0 .168-.029 1.6 1.6 0 0 0 .325-.129 4 4 0 0 0 .855-.64c.306-.3.577-.63.788-1.006q.045-.08.076-.165a2 2 0 0 0 .051-.161q.019-.083.029-.168a.8.8 0 0 0-.038-.327.7.7 0 0 0-.165-.27"/>
+          </svg>
+        </a>
+      </div>
+      <a href="policies.html" class="footer-policies">Policies</a>
+      <p>&copy; 2025 Charters on Vine LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
